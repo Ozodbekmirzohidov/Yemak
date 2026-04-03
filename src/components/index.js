@@ -1,1 +1,5 @@
 export * from "./Header/Header"
+export * from "./Footer/Footer"
+export * from "./RestaurantCard/RestaurantCard"
+export * from "./FilterTabs/FilterTabs"
+export * from "./CategoryTabs/CategoryTabs"
