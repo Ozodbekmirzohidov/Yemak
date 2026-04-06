@@ -1,12 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { CategoryTabs } from "../../components";
-import { Modal } from "../../components/Modal/Modal";
+import { CategoryTabs, Modal } from "../../components";
 
 export function RestaurantDetail() {
   const [data, setData] = useState([]);
   const { id } = useParams();
-  const [selected, setSelected] = useState(null);
+  const [choose, setChoose] = useState(null);
 
   const fetchRes = async () => {
     try {
@@ -22,13 +21,13 @@ export function RestaurantDetail() {
   };
 
   useEffect(() => {
-    fetchRes().then((res) => setData(res?.data?.products || []));
+    fetchRes().then((res) => setData(res?.data?.products));
     console.log(data);
   }, [id]);
 
   return (
     <>
-      <Modal product={selected} onClose={() => setSelected(null)} />
+      {choose && <Modal meal={choose} close={() => setChoose(null)} />}
       <CategoryTabs />
       <div className="w-full max-w-[1080px] m-auto">
         {data.map((item) => (
@@ -37,7 +36,7 @@ export function RestaurantDetail() {
             <ul className="grid grid-cols-3 gap-[32px]">
               {item.products?.map((product) => (
                 <li
-                  onClick={() => setSelected(product)}
+                  onClick={() => setChoose(product)}
                   key={product.id}
                   className="rounded-[16px] overflow-hidden border border-[#F0F0F0] bg-[#FFFFFF] mb-[10px]"
                 >

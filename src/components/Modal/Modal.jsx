@@ -1,43 +1,72 @@
-export function Modal({ product, onClose }) {
-  if (!product) return null;
+import { createPortal } from "react-dom";
+import { useState } from "react";
 
-  return (
+export function Modal({ meal, close }) {
+  const [count, setCount] = useState(1);
+
+  return createPortal(
     <div
-      className="fixed inset-0 bg-black/50 flex items-center justify-center z-50"
-      onClick={onClose}
+      className="fixed flex items-center justify-center inset-0 bg-black/85"
+      onClick={() => close()}
     >
       <div
-        className="bg-white rounded-[16px] w-[640px] flex overflow-hidden"
+        className="relative flex gap-[20px] w-[750px] p-5 bg-[#FFFFFF] rounded-[20px]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="w-[300px] h-[400px]">
-          <img
-            src={product.photo}
-            alt={product.name}
-            className="w-full h-full object-cover"
-          />
+        <div
+          className="absolute flex items-center justify-center top-5 right-5 w-8 h-8 cursor-pointer bg-[#F7F7F7] border border-[#F0F0F0] rounded-[50%]"
+          onClick={() => close()}
+        >
+          x
         </div>
-
-        <div className="flex-1 p-[24px] flex flex-col gap-[12px]">
-          <div className="flex items-center justify-between">
-            <h2 className="text-[20px] font-bold text-[#12282F]">
-              {product.name}
-            </h2>
-            <button onClick={onClose} className="text-[20px]">
-              ✕
-            </button>
+        <div className="border-2 border-red-500 w-[330px] h-[330px] rounded-[14px] overflow-hidden">
+          <img className="w-full h-full " src={meal.photo} alt="" />
+        </div>
+        <div className="w-max">
+          <h2 className="text-[24px] font-bold text-[#12282F] mb-[12px]">
+            {meal.name}
+          </h2>
+          <h3 className="text-[14px] font-[400px] text-[#5A696E] mb-4">
+            {meal.description || "Hozircha ma'lumotlar yo'q"}
+          </h3>
+          <div
+            className="flex justify-between items-center w-[360px] p-3 rounded-[12px] bg-[#ffffff] mb-4"
+            style={{ boxShadow: "0px 6px 20px 0px #12282F0F" }}
+          >
+            <div className=" w-max">
+              <div className="text-[16px] font-bold text-[#12282F]">Miqdor</div>
+              <div className="text-[14px] text-[#5A696E]">
+                <span className="text-[16px] font-bold text-[#12282F]">
+                  {count}{" "}
+                </span>
+                <span className="mr-[3px]">x</span>
+                {meal.price * count} UZS
+              </div>
+            </div>
+            <div className="flex gap-[10px]">
+              <button
+                onClick={() => setCount(count > 1 ? count - 1 : 1)}
+                className="flex items-center justify-center w-[48px] h-[36px] bg-[#ffffff] border border-[#B0B7BA] rounded-[8px] cursor-pointer"
+              >
+                -
+              </button>
+              <div className=" flex items-center justify-center w-[48px] h-[36px] bg-[#F7F7F7] rounded-[8px]">
+                {count}
+              </div>
+              <button
+                onClick={() => setCount(count + 1)}
+                className="flex items-center justify-center w-[48px] h-[36px] bg-[#ffffff] border border-[#B0B7BA] rounded-[8px] cursor-pointer"
+              >
+                +
+              </button>
+            </div>
           </div>
-          <p className="text-[16px] text-[#5A696E]">
-            {product.description || "Tavsif mavjud emas"}
-          </p>
-          <button className="w-full bg-[#EDC843] h-[44px] rounded-[10px] font-semibold text-[15px] text-[#12282F] mt-[20px]">
-            Savatchaga <span>{product.price}</span>
-          </button>
-          <div className="text-[18px] font-bold text-[#12282F] mt-auto">
-            {product.price} UZS
+          <div className="w-[360px] py-3 bg-[#EDC843] rounded-[10px] text-center text-[15px] font-semibold text-[#12282F] cursor-pointer">
+            Savatchaga <span>{meal.price * count}</span>
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }

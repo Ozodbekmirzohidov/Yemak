@@ -3,20 +3,19 @@ import { useState, useEffect } from "react";
 export function FilterTabs() {
   const [data, setData] = useState([]);
 
-  const fetchCategory = async () => {
-    try {
-      const categoryUrl = `https://api.yemak.uz/user/category`;
-      const res = await fetch(categoryUrl);
-      const data = await res.json();
-      return data;
-    } catch (error) {
-      console.error(error);
-      return [];
-    }
-  };
+ const fetchCategory = async () => {
+   try {
+     const res = await fetch(`https://api.yemak.uz/user/category`);
+     const json = await res.json();
+     return json.data; 
+   } catch (error) {
+     console.error(error);
+     return [];
+   }
+ };
 
   useEffect(() => {
-    fetchCategory().then((res) => setData(res.data));
+    fetchCategory().then(setData);
   }, []);
 
 
