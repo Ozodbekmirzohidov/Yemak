@@ -4,7 +4,7 @@ export function Footer() {
       <div className=" flex justify-between w-full max-w-[1080px] h-full m-auto">
         <div className="w-[500px]">
           <div className="h-[40px] mb-[20px]">
-            <img src="../public/assets/img/svg/header-logo.svg" alt="" />
+            <img src="/assets/img/svg/header-logo.svg" alt="" />
           </div>
           <div className="flex gap-3.5 mb-[12px]">
             <span className="text-[16px] font-semibold text-[#12282F]">
@@ -26,7 +26,7 @@ export function Footer() {
         <div className="flex items-center gap-[12px] w-[500px]">
           <div className="flex justify-between pl-[12px] pr-[24px] items-center w-[160px] h-[60px] bg-[#F7F7F7] rounded-[12px]">
             <div>
-              <img src="../public/assets/img/svg/apple-icon.svg" alt="" />
+              <img src="/assets/img/svg/apple-icon.svg" alt="" />
             </div>
             <div>
               <span className="text-xs font-normal text-[#B0B7BA]">
@@ -39,7 +39,7 @@ export function Footer() {
           </div>
           <div className="flex justify-between pl-[12px] pr-[24px] items-center w-[160px] h-[60px] bg-[#F7F7F7]  rounded-[12px]">
             <div>
-              <img src="../public/assets/img/svg/market-icon.svg" alt="" />
+              <img src="/assets/img/svg/market-icon.svg" alt="" />
             </div>
             <div>
               <span className="text-xs font-normal text-[#B0B7BA]">
@@ -52,7 +52,7 @@ export function Footer() {
           </div>
           <div className="flex justify-between pl-[12px] pr-[24px] items-center w-[160px] h-[60px] bg-[#F7F7F7] rounded-[12px]">
             <div>
-              <img src="../public/assets/img/svg/huawei-icon.svg" alt="" />
+              <img src="/assets/img/svg/huawei-icon.svg" alt="" />
             </div>
             <div>
               <span className="text-xs font-normal text-[#B0B7BA]">

@@ -5,7 +5,7 @@ export function Header() {
         <div className="w-full max-w-[134px] ">
           <img
             className="w-full h-[40px]"
-            src="../public/assets/img/svg/header-logo.svg"
+            src="/assets/img/svg/header-logo.svg"
             alt="logo"
           />
         </div>
@@ -13,7 +13,7 @@ export function Header() {
           <div className="relative  h-[42px]">
             <img
               className="absolute top-[50%] translate-y-[-50%] left-[10px]"
-              src="../public/assets/img/svg/search-icon.svg"
+              src="/assets/img/svg/search-icon.svg"
               alt="search-icon"
             />
             <input
@@ -21,17 +21,12 @@ export function Header() {
               type="text"
               placeholder="Izlash"
             />
-            {/* <img
-              className="absolute top-[50%] translate-y-[-50%] right-0"
-              src="../public/assets/img/svg/remove-icon.svg"
-              alt="x icon"
-            /> */}
           </div>
 
           <div className="relative flex items-center w-[228px]  ml-[28px] pl-[36px] border border-[#ddd9d9] rounded-[10px]">
             <img
               className="absolute left-[14px]"
-              src="../public/assets/img/svg/location-icon.svg"
+              src="/assets/img/svg/location-icon.svg"
               alt="location-icon"
             />
             <h3 className="text-[14pxpx] font-semibold">
@@ -39,7 +34,7 @@ export function Header() {
             </h3>
             <img
               className="absolute right-[12px]"
-              src="../public/assets/img/svg/right-icon.svg"
+              src="/assets/img/svg/right-icon.svg"
               alt="right icon"
             />
           </div>
@@ -47,7 +42,7 @@ export function Header() {
             <li className="flex flex-col items-center mb-[2px] h-full w-max">
               <img
                 className="w-[24px] h-[24px]"
-                src="../public/assets/img/svg/receipt-icon.svg"
+                src="/assets/img/svg/receipt-icon.svg"
                 alt=""
               />
               <span className="text-[12px] font-semibold text-[#5A696E]">
@@ -57,7 +52,7 @@ export function Header() {
             <li className="flex flex-col items-center mb-[2px] h-full w-max">
               <img
                 className="w-[24px] h-[24px]"
-                src="../public/assets/img/svg/basket-icon.svg"
+                src="/assets/img/svg/basket-icon.svg"
                 alt=""
               />
               <span className="text-[12px] font-semibold text-[#5A696E]">
@@ -67,7 +62,7 @@ export function Header() {
             <li className="flex flex-col items-center mb-[2px] h-full w-max">
               <img
                 className="w-[24px] h-[24px]"
-                src="../public/assets/img/svg/world-icon.svg"
+                src="/assets/img/svg/world-icon.svg"
                 alt=""
               />
               <span className="text-[12px] font-semibold text-[#5A696E]">
@@ -75,7 +70,7 @@ export function Header() {
               </span>
             </li>
             <li className="h-full w-max">
-              <img src="../public/assets/img/svg/user.svg" alt="" />
+              <img src="/assets/img/svg/user.svg" alt="" />
             </li>
           </ul>
         </div>
